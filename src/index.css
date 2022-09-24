@@ -15,7 +15,7 @@ code {
     monospace;
 }
 .animated_background {
-  position: absolute;
+  position: fixed;
   min-width: 100%;
   min-height: 100%;
   top: 0;
@@ -26,6 +26,7 @@ code {
 }
 
 .animated_background > video {
+  margin-top: 80px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -35,4 +36,45 @@ code {
   .animated_background > video {
     width: 100%;
   }
+}
+li {
+  list-style: none;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+:root {
+  --gradient-right: rgba(51, 54, 253, 0.233);
+  --gradient-left: rgba(12, 85, 241, 0.37);
+  --gradient-background: rgba(10, 14, 32, 0.93);
+  --gradient-background-right: rgba(51, 54, 253, 0);
+  --gradient-background-left: rgba(12, 85, 241, 0.13);
+  --color-showcase-header: rgba(34, 32, 61, 0.93);
+  --gradient-showcase-header-left: rgba(20, 33, 68, 0.93);
+  --btn-background: rgb(38, 36, 68);
+  --btn-background-hover: rgb(48, 46, 78);
+  --btn-outline: rgb(88, 86, 108);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: white;
+}
+p {
+  color: #9b9b9b;
+}
+a {
+  text-decoration: none;
+}
+
+.loaderStyle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 1101;
 }
