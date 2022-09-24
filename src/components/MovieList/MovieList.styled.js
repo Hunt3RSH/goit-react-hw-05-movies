@@ -4,6 +4,7 @@ export const LinkStyle = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 100%;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,7 +37,6 @@ export const MovieCard = styled.li`
   padding: 0px 0px 0px 0px;
   font-size: 13px;
   overflow: hidden;
-  padding: 5px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   height: 100%;
@@ -44,7 +44,8 @@ export const MovieCard = styled.li`
 
 export const Image = styled.img`
   transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  width: 95%;
+  padding: 7px;
 `;
 
 export const MovieTitle = styled.p`
@@ -52,6 +53,6 @@ export const MovieTitle = styled.p`
   font-weight: 500;
   text-align: center;
   color: white;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: 15px;
 `;
