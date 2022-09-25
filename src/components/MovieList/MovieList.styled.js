@@ -29,7 +29,6 @@ export const MovieList = styled.ul`
 `;
 
 export const MovieCard = styled.li`
-  width: 100%;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
@@ -54,5 +53,6 @@ export const MovieTitle = styled.p`
   text-align: center;
   color: white;
   margin-top: 15px;
-  margin-bottom: 15px;
+  padding: 0 7px;
+  margin-bottom: 22px;
 `;

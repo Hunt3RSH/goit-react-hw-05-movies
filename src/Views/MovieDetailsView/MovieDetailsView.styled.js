@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ButtonLink = styled(Link)`
+  display: block;
   border-radius: 2px;
   background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
   padding: 0 15px;
   font-size: 15px;
   line-height: 30px;
   color: white;
-  margin-bottom: 20px;
-  margin-left: 15px;
 
   &:hover,
   &:focus {
@@ -22,19 +21,29 @@ export const SectionWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 15px;
+  gap: 30px;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  padding-bottom: 15px;
 `;
 
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+`;
+
+export const AdditionalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+
+export const TitleDetais = styled.h2`
+  font-size: 30px;
 `;
 
 export const DetaisWrapper = styled.div`
@@ -48,7 +57,7 @@ export const DetaisWrapper = styled.div`
 
 export const Img = styled.img`
   display: block;
-  max-width: 450px;
+  max-width: 480px;
   width: 100%;
 `;
 
@@ -57,5 +66,16 @@ export const MovieWrapper = styled.div`
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row-reverse;
   gap: 30px;
+`;
+
+export const BtnInfoWrapper = styled.ul`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+`;
+
+export const BtnText = styled.span`
+  font-size: 15px;
 `;

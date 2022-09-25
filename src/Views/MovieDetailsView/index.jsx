@@ -2,14 +2,18 @@ import { Suspense, useEffect, useState } from 'react';
 import { Blocks } from 'react-loader-spinner';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { loadFullInfoMovie } from 'Utills/Api/api';
-import { Sections } from 'Views/HomeView/HomeView.styled';
+import { Sections, Title } from 'Views/HomeView/HomeView.styled';
 import {
+  AdditionalWrapper,
+  BtnInfoWrapper,
+  BtnText,
   ButtonLink,
   DetaisWrapper,
   Img,
   InfoWrapper,
   MovieWrapper,
   SectionWrapper,
+  TitleDetais,
 } from './MovieDetailsView.styled';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -32,7 +36,7 @@ const MovieDetails = () => {
     movieInfo;
   const posterLink = BASE_URL + poster_path;
   const userScore = parseInt(vote_average * 10);
-  const genresInfo = genres.map(a => a.name).join(', ');
+  const genresInfo = genres.map(el => el.name).join(', ');
   const releaseYear = release_date.split('-')[0];
 
   return (
@@ -42,36 +46,36 @@ const MovieDetails = () => {
           <ButtonLink to={backLink}>Go Back</ButtonLink>
           <MovieWrapper>
             <Img src={posterLink} alt={`${title} poster`} />
-            <div>
+            <AdditionalWrapper>
               <DetaisWrapper>
-                <h2>
+                <TitleDetais>
                   {title} ({releaseYear})
-                </h2>
+                </TitleDetais>
                 <p>User Score: {userScore}%</p>
                 <h3>Overview</h3>
                 <p>{overview}</p>
                 <h3>Genres</h3>
                 <p>{genresInfo}</p>
               </DetaisWrapper>
-            </div>
+              <DetaisWrapper>
+                <Title>Additional information</Title>
+                <BtnInfoWrapper>
+                  <li>
+                    <ButtonLink to="cast" state={location.state}>
+                      <BtnText>Cast</BtnText>
+                    </ButtonLink>
+                  </li>
+                  <li>
+                    <ButtonLink to="reviews" state={location.state}>
+                      <BtnText>Reviews</BtnText>
+                    </ButtonLink>
+                  </li>
+                </BtnInfoWrapper>
+              </DetaisWrapper>
+            </AdditionalWrapper>
           </MovieWrapper>
         </SectionWrapper>
       </Sections>
-      {/* <Sections>
-        <h2>Additional information</h2>
-        <ul>
-          <li>
-            <Link to="cast" state={location.state}>
-              Cast
-            </Link>
-          </li>
-          <li>
-            <Link to="reviews" state={location.state}>
-              Reviews
-            </Link>
-          </li>
-        </ul>
-      </Sections> */}
       <Suspense
         fallback={
           <Blocks

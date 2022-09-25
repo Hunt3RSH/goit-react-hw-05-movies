@@ -37,8 +37,8 @@ export const loadCastInfoMovie = async id => {
     `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
   );
 
-  const castInfo = response.data.cast.map(a => {
-    const { name, character, profile_path, id } = a;
+  const castInfo = response.data.cast.map(el => {
+    const { name, character, profile_path, id } = el;
     return {
       name,
       character,
@@ -54,12 +54,13 @@ export const loadReviewsMovie = async id => {
   const response = await axios.get(
     `movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
-  const reviews = response.data.results.map(a => {
-    const { id, author, content } = a;
+  const reviews = response.data.results.map(el => {
+    const { id, author, content, author_details } = el;
     return {
       id,
       author,
       content,
+      author_details,
     };
   });
 
@@ -72,18 +73,14 @@ export const loadMovieOnSearch = searchQuery => {
   )
     .then(response => response.json())
     .then(data => {
-      const movieList = data.results.map(a => {
-        const { id, title } = a;
+      const movieList = data.results.map(el => {
+        const { id, title, poster_path } = el;
         return {
           id,
           title,
+          poster_path,
         };
       });
-
-      if (movieList.length === 0) {
-        alert("We can't found anythings, please repeate your request");
-        return;
-      }
 
       return movieList;
     });

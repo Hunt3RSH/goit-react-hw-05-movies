@@ -32,5 +32,5 @@ export const Title = styled.h2`
   color: white;
   text-align: center;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 30px;
 `;
