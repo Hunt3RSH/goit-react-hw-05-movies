@@ -10,7 +10,7 @@ import {
   ReviewList,
   ReviewListItem,
 } from './ReviewsView.styled';
-import image from '../CastView/image.png';
+import image from '../CastView/image.jpg';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 

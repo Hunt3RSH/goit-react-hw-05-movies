@@ -12,7 +12,7 @@ import {
   CastName,
   CharacterName,
 } from './CastView.styled';
-import image from './image.png';
+import image from './image.jpg';
 
 const BASE_PHOTO_URL = 'https://image.tmdb.org/t/p/w200/';
 

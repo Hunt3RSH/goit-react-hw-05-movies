@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CastList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 5fr));
   grid-gap: 15px;
   margin: 0 auto;
   padding: 0 15px;
@@ -30,7 +30,8 @@ export const CastCard = styled.li`
 export const CastImg = styled.img`
   display: block;
   width: 100%;
-  height: 300px;
+  max-width: 150px;
+  height: 200px;
   object-fit: cover;
 `;
 
