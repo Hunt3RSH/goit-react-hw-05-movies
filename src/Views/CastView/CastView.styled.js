@@ -30,7 +30,7 @@ export const CastCard = styled.li`
 export const CastImg = styled.img`
   display: block;
   width: 100%;
-  max-width: 150px;
+  max-width: 200px;
   height: 200px;
   object-fit: cover;
 `;
