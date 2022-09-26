@@ -19,7 +19,12 @@ export const SearchBar = ({ onSubmit }) => {
   return (
     <SearchWrapper>
       <SearchBox onSubmit={e => handleSubmit(e)}>
-        <SearchInput type="text" name="search" autoComplete="off" />
+        <SearchInput
+          type="text"
+          name="search"
+          autoComplete="off"
+          placeholder="Search your movie by title"
+        />
         <SearchBtn type="submit"></SearchBtn>
       </SearchBox>
     </SearchWrapper>
