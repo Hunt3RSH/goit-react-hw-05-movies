@@ -6,11 +6,12 @@ const API_KEY = '40875a7f166b061faf5f77ac964541b9';
 export const loadTrendingMovies = async () => {
   const response = await axios.get(`trending/movie/day?api_key=${API_KEY}`);
   const trendingMovies = response.data.results.map(movie => {
-    const { id, title, poster_path } = movie;
+    const { id, title, poster_path, vote_average } = movie;
     return {
       id,
       title,
       poster_path,
+      vote_average,
     };
   });
   return trendingMovies;
@@ -74,11 +75,12 @@ export const loadMovieOnSearch = searchQuery => {
     .then(response => response.json())
     .then(data => {
       const movieList = data.results.map(el => {
-        const { id, title, poster_path } = el;
+        const { id, title, poster_path, vote_average } = el;
         return {
           id,
           title,
           poster_path,
+          vote_average,
         };
       });
 

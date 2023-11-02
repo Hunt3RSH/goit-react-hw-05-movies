@@ -8,7 +8,6 @@ const HomeView = () => {
   useEffect(() => {
     loadTrendingMovies().then(setTrendigMovies);
   }, []);
-
   return (
     <Sections>
       <Title>Trending today</Title>

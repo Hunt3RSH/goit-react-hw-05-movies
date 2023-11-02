@@ -56,3 +56,16 @@ export const MovieTitle = styled.p`
   padding: 0 7px;
   margin-bottom: 22px;
 `;
+
+export const MovieRating = styled.p`
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px 0px 0px 20px;
+`;
