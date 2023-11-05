@@ -29,7 +29,17 @@ export const ButtonOverflow = styled(Link)`
   &:focus {
     background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
   }
-  @media screen and (min-width: 768px) {
+  img {
+    @media screen and (max-width: 959px) {
+      display: none;
+    }
+  }
+  span {
+    @media screen and (min-width: 960px) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 960px) {
     position: fixed;
     z-index: 110;
     top: 0;

@@ -46,6 +46,7 @@ const MovieDetails = () => {
       <Sections>
         <SectionWrapper>
           <ButtonOverflow to={backLink}>
+            <span>go back</span>
             <img src={AssetArow} alt="" width="40px" />
           </ButtonOverflow>
           <MovieWrapper>
