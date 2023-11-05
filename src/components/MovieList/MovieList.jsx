@@ -6,8 +6,10 @@ import {
   MovieTitle,
   LinkStyle,
   MovieRating,
+  VoteStyle,
+  ImageWrapper,
 } from './MovieList.styled';
-
+import image from '../../Views/CastView/image.png';
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 export const MoviesList = ({ movies, link, state }) => {
@@ -15,20 +17,34 @@ export const MoviesList = ({ movies, link, state }) => {
     <MovieList>
       {movies.map(movie => {
         const { id, title, poster_path, vote_average } = movie;
-        const poster = BASE_URL + poster_path;
+        const poster = poster_path === null ? image : BASE_URL + poster_path;
         return link ? (
           <MovieCard key={id}>
             <LinkStyle to={`${link}${id}`} state={state}>
-              <Image src={poster} alt={title} />
-              <MovieRating>{vote_average}/10</MovieRating>
+              <ImageWrapper>
+                <Image src={poster} alt={title} />
+                <MovieRating>
+                  <VoteStyle vote={vote_average}>
+                    {vote_average.toFixed(1)}
+                  </VoteStyle>
+                  /10
+                </MovieRating>
+              </ImageWrapper>
               <MovieTitle>{title}</MovieTitle>
             </LinkStyle>
           </MovieCard>
         ) : (
           <MovieCard key={id}>
             <LinkStyle to={`${id}`} state={state}>
-              <Image src={poster} alt={title} />
-              <MovieRating>{vote_average}</MovieRating>
+              <ImageWrapper>
+                <Image src={poster} alt={title} />
+                <MovieRating>
+                  <VoteStyle vote={vote_average}>
+                    {vote_average.toFixed(1)}
+                  </VoteStyle>
+                  /10
+                </MovieRating>
+              </ImageWrapper>
               <MovieTitle>{title}</MovieTitle>
             </LinkStyle>
           </MovieCard>

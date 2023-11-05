@@ -17,6 +17,7 @@ import {
   TitleDetais,
 } from './MovieDetailsView.styled';
 import AssetArow from './Asset_1.svg';
+import image from '../CastView/image.png';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -36,7 +37,7 @@ const MovieDetails = () => {
 
   const { vote_average, title, overview, genres, poster_path, release_date } =
     movieInfo;
-  const posterLink = BASE_URL + poster_path;
+  const posterLink = poster_path === null ? image : BASE_URL + poster_path;
   const userScore = parseInt(vote_average * 10);
   const genresInfo = genres.map(el => el.name).join(', ');
   const releaseYear = release_date.split('-')[0];
