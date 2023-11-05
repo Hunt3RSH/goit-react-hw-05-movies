@@ -8,6 +8,7 @@ import {
   BtnInfoWrapper,
   BtnText,
   ButtonLink,
+  ButtonOverflow,
   DetaisWrapper,
   Img,
   InfoWrapper,
@@ -15,6 +16,7 @@ import {
   SectionWrapper,
   TitleDetais,
 } from './MovieDetailsView.styled';
+import AssetArow from './Asset_1.svg';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -43,7 +45,9 @@ const MovieDetails = () => {
     <InfoWrapper>
       <Sections>
         <SectionWrapper>
-          <ButtonLink to={backLink}>Go Back</ButtonLink>
+          <ButtonOverflow to={backLink}>
+            <img src={AssetArow} alt="" width="40px" />
+          </ButtonOverflow>
           <MovieWrapper>
             <Img src={posterLink} alt={`${title} poster`} />
             <AdditionalWrapper>

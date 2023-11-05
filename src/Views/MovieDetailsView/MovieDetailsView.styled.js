@@ -16,6 +16,40 @@ export const ButtonLink = styled(Link)`
   }
 `;
 
+export const ButtonOverflow = styled(Link)`
+  display: block;
+  border-radius: 2px;
+  background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+  color: white;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
+  }
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    z-index: 110;
+    top: 0;
+    left: 0;
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0.4;
+    img {
+      opacity: 0.5;
+    }
+  }
+`;
+
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
